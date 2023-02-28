@@ -1,6 +1,6 @@
 <!-- HEADERS -->
 <p align="center">
-  <img width="40%" src="https://i.gifer.com/1ka6.gif" />
+  <img width="40%" src="bepop.gif" />
 </p>
 
 <p align="center">
