@@ -1,6 +1,6 @@
 <!-- HEADERS -->
 <p align="center">
-  <img width="40%" src="bepop.gif" />
+  <img width="40%" src="assets/bepop.gif" />
 </p>
 
 <p align="center">
@@ -17,3 +17,37 @@
     <img src="https://img.shields.io/github/stars/jrona1do/tokyofiles?color=1a1b26&label=Stars%20%20&logo=github&labelColor=7aa2f7&logoColor=ffffff">&nbsp;&nbsp;&nbsp;
 
 </p>
+
+
+<!-- INFORMATION -->
+
+### Thanks for dropping by!
+
+<img src="https://raw.githubusercontent.com/jrona1do/tokyofiles/master/assets/tokyo-rice.png" alt="img" align="right" width="340px">
+
+This is my personal collection of configuration files.
+
+You are probably here for my **Aesthetic BSPWM** configuration.
+
+The [setup section](#setup) will guide you through the installation process.
+
+Here are some details about my setup:
+
+- **WM:** [xfwn](https://wiki.archlinux.org/title/Xfwm)
+- **DE:** [xfce](https://wiki.archlinux.org/title/Xfce)
+- **OS:** [Arch Linux](https://archlinux.org)
+- **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
+- **Terminal multiplexer:** [tmux](https://github.com/tmux/tmux/wiki)
+- **Shell:** [zsh](https://wiki.archlinux.org/index.php/Zsh)
+- **Monitor of resources:** [btop](https://github.com/aristocratos/btop)
+- **GTK theme:** [TokyoNight](https://github.com/stronk-dev/Tokyo-Night-Linux/tree/master/usr/share/themes/TokyoNight)
+- **Widgets:** [eww](https://github.com/elkowar/eww)
+- **Compositor:** [picom](https://github.com/ibhagwan/picom)
+- **Editor:** [neovim (NvChad)](https://github.com/NvChad/NvChad)
+- **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
+- **Startpage:** [YAGS](https://github.com/PrettyCoffee/yet-another-generic-startpage)
+- **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
+- **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
+- **Wallpaper:** [by Leikoi](https://alphacoders.com/author/view/62160)
+
+---
