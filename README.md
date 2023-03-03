@@ -23,17 +23,14 @@
 
 ### Thanks for dropping by!
 
-<img src="https://raw.githubusercontent.com/jrona1do/tokyofiles/master/assets/tokyo-rice.png" alt="img" align="right" width="340px">
+<img src="https://raw.githubusercontent.com/jrona1do/tokyofiles/master/assets/tokyo-rice.png" alt="img" align="right" width="320px">
 
-This is my personal collection of configuration files.
+Welcome a my personal collection of configuration files.
 
-You are probably here for my **Aesthetic BSPWM** configuration.
 
-The [setup section](#setup) will guide you through the installation process.
+If you are interested in my **[XFCE] - Everything Tokyo Night**, follow the setup below:
 
-Here are some details about my setup:
-
-- **WM:** [xfwn](https://wiki.archlinux.org/title/Xfwm)
+- **WM:** [xfwm](https://wiki.archlinux.org/title/Xfwm)
 - **DE:** [xfce](https://wiki.archlinux.org/title/Xfce)
 - **OS:** [Arch Linux](https://archlinux.org)
 - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
@@ -49,5 +46,8 @@ Here are some details about my setup:
 - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Wallpaper:** [by Leikoi](https://alphacoders.com/author/view/62160)
-
 ---
+
+## Setup.
+> This is step-by-step of this setup is divided into:
+[]
