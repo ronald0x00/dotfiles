@@ -70,8 +70,8 @@ The [setup section](#setup) will guide you through the installation process.
 ```sh
  $ yay -S xfce4-genmon-plugin xfce4-docklike-plugin xfce4-cpugraph-plugin \ 
  xfce4-clipman-plugin xfce4-pulseaudio-plugin \
- vim nvim nvim-packer-git kitty tmux zsh rofi btop \ 
- picom-ibhagwan-git playerctl xclip \
+ vim nvim nvim-packer-git kitty tmux zsh rofi spotify \ 
+ picom-ibhagwan-git playerctl xclip btop stow \
 
 ```
 
@@ -81,4 +81,28 @@ The [setup section](#setup) will guide you through the installation process.
 
 ## Panel Preferences
 
+> Panel preferences match a **1920x1080** resolution monitor.
 
+
+<img src="assets/panel/panel-1.png" alt="img" align="center" width="260px">
+<img src="assets/panel/panel-2.png" alt="img" align="center" width="260px">
+<img src="assets/panel/panel-3.png" alt="img" align="center" width="260px">
+
+
+<details open>
+   <summary><strong>Separator</strong></summary>
+
+   - All separators have ***transparent style***, where 3rd and 4th are ***expanded***.
+
+<details open>
+   <summary><strong>Generic Monitor</strong></summary>
+
+   - Generic Monitor matches [Genmon](https://docs.xfce.org/panel-plugins/xfce4-genmon-plugin/start), in this repository, they can be found [here](https://github.com/jrona1do/tokyofiles/tree/master/genmom-scripts/.config/genmom-scripts).
+
+
+<details open>
+   <summary><strong>Panel Style</strong></summary>
+
+   - Panel styling is able to change the colors of panel components such as [workspace switcher](https://docs.xfce.org/xfce/xfce4-panel/pager), [plugins](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins) and [action buttons](https://docs.xfce.org/xfce/xfce4-panel/actions). For more details, [visit](https://docs.xfce.org/xfce/xfce4-panel/start).
+
+In this repository, they can be found [here](https://github.com/jrona1do/tokyofiles/tree/master/gtk-3.0/.config/gtk-3.0)
