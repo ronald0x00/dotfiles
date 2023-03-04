@@ -48,6 +48,12 @@ If you are interested in my **[XFCE] - Everything Tokyo Night**, follow the setu
 - **Wallpaper:** [by Leikoi](https://alphacoders.com/author/view/62160)
 ---
 
+The [setup section](#setup) will guide you through the installation process.
+
 ## Setup.
 > This is step-by-step of this setup is divided into:
-[]
+
+- [Dependencies](#dependencies)
+- [Panel Preferences](#panel)
+- [Elkowar's Wacky Widgets(Eww)](#eww)
+- [Installation](#installation)
