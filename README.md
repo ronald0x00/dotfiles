@@ -55,5 +55,30 @@ The [setup section](#setup) will guide you through the installation process.
 
 - [Dependencies](#dependencies)
 - [Panel Preferences](#panel)
+- [Fonts](#fonts)
 - [Elkowar's Wacky Widgets(Eww)](#eww)
 - [Installation](#installation)
+---
+## Dependencies
+
+<details open>
+   <summary><strong>Arch Linux (and Arch-based distributions)</strong></summary>
+
+> Assuming your **AUR Helper** is [yay](https://github.com/Jguer/yay), and have **group** [xfce4](https://archlinux.org/groups/x86_64/xfce4/) installed
+
+
+```sh
+ $ yay -S xfce4-genmon-plugin xfce4-docklike-plugin xfce4-cpugraph-plugin \ 
+ xfce4-clipman-plugin xfce4-pulseaudio-plugin \
+ vim nvim nvim-packer-git kitty tmux zsh rofi btop \ 
+ picom-ibhagwan-git playerctl xclip \
+
+```
+
+   </details>
+
+   <br>
+
+## Panel Preferences
+
+
