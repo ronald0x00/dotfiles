@@ -50,7 +50,7 @@ If you are interested in my **[XFCE] - Everything Tokyo Night**, follow the setu
 
 The [setup section](#setup) will guide you through the installation process.
 
-## Setup.
+## Setup
 > This is step-by-step of this setup is divided into:
 
 - [Dependencies](#dependencies)
@@ -79,7 +79,7 @@ The [setup section](#setup) will guide you through the installation process.
 
    <br>
 
-## Panel Preferences
+## Panel
 
 > Panel preferences match a **1920x1080** resolution monitor.
 
@@ -106,3 +106,28 @@ The [setup section](#setup) will guide you through the installation process.
    - Panel styling is able to change the colors of panel components such as [workspace switcher](https://docs.xfce.org/xfce/xfce4-panel/pager), [plugins](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins) and [action buttons](https://docs.xfce.org/xfce/xfce4-panel/actions). For more details, [visit](https://docs.xfce.org/xfce/xfce4-panel/start).
 
 In this repository, they can be found [here](https://github.com/jrona1do/tokyofiles/tree/master/gtk-3.0/.config/gtk-3.0)
+
+
+## Fonts
+> You will need to install the following fonts
+- [DaddyTimeMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/DaddyTimeMono.zip)
+- [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip)
+- [Font Awesome 6](https://use.fontawesome.com/releases/v6.3.0/fontawesome-free-6.3.0-desktop.zip)
+
+> After installing the fonts, run.
+
+```sh
+fc-cache -fv
+```
+
+## Eww
+> The widgets shown [here](https://github.com/jrona1do/tokyofiles/tree/master/eww/.config/eww) are for a monitor with a resolution of 1920x1080. If you have another type of resolution, you must change the values `x` and `y`.
+ - Follow the [installation instructions](https://elkowar.github.io/eww/) and run.
+
+```sh
+cd target/release
+chmod +x ./eww
+mv eww $HOME/.local/bin/
+```
+
+
