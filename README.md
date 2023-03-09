@@ -58,6 +58,7 @@ The [setup section](#setup) will guide you through the installation process.
 - [Fonts](#fonts)
 - [Elkowar's Wacky Widgets(Eww)](#eww)
 - [Installation](#installation)
+- [Acknowledgments](#thanks)
 ---
 ## Dependencies
 
@@ -131,3 +132,30 @@ mv eww $HOME/.local/bin/
 ```
 
 
+## Installation
+> The installation process will be divided into:
+- Clone this repository
+```sh
+git clone https://github.com/jrona1do/tokyofiles
+```
+- Using [stow](https://man.archlinux.org/man/community/stow/stow.8.en) for manager your dotfiles.
+```sh
+#Install ALL packages
+cd tokyofiles
+stow *
+
+#Install a specific packages
+cd tokyofiles
+stow tmux
+```
+
+## Acknowledgments
+
+- **Thanks to**
+    - [rxyhn](https://github.com/rxyhn) and [mehedirm6244](https://github.com/mehedirm6244) for **inspiration**.
+    - [adi1090x](https://github.com/adi1090x) for **rofi themes**.
+    - [Phantas0s](https://github.com/phantas0s) for the **articles on zsh and tmux**.
+    - [gh0stzk](https://github.com/gh0stzk) for **eww widgets**.
+    - [cuducos](https://github.com/cuducos) and [Massolari](https://github.com/Massolari) for **Vim/NeoVim tips**.
+
+<br>
