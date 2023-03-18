@@ -1,7 +1,7 @@
 
 return {
   n = {
-    ["<leader>pm"] = {":MarkdownPreview<CR>", "Preview"},
+    ["<leader>pm"] = {":Glow<CR>", "Markdown Preview"},
   },
 
 }

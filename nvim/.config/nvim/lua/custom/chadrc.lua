@@ -1,21 +1,19 @@
+---@type ChadrcConfig
 local M = {}
-local override = require "custom.override"
 
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 M.ui = {
   theme = "tokyonight",
   theme_toggle = { "tokyonight", "tokyodark" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
+M.plugins = "custom.plugins"
+
+-- check core.mappings for table structure
 M.mappings = require "custom.keymaps"
 
-M.plugins = {
-  user = require "custom.plugins",
-  override = {
-    ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
-    ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
-    ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
-    ["williamboman/mason.nvim"] = override.mason,
-    ["folke/which-key.nvim"] = override.which_key,
-  },
-}
 return M

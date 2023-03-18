@@ -1,9 +1,5 @@
 -- n, v, i, t = mode names
 
-local function termcodes(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 local M = {}
 
 M.general = {
@@ -20,8 +16,7 @@ M.general = {
   },
 
   n = {
-    ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
-
+    ["<Esc>"] = { ":noh <CR>", "clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
     ["<C-l>"] = { "<C-w>l", "window right" },
@@ -38,16 +33,6 @@ M.general = {
     ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
 
-    -- update nvchad
-    ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
-
-    ["<leader>tt"] = {
-      function()
-        require("base46").toggle_theme()
-      end,
-      "toggle theme",
-    },
-
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
@@ -59,21 +44,24 @@ M.general = {
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
+    ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
-  t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
+  t = {
+    ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
+  },
 
   v = {
-    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
-    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move down", opts = { expr = true } },
   },
 
   x = {
-    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move left", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move down", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', opts = { silent = true } },
+    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "dont copy replaced text", opts = { silent = true } },
   },
 }
 
@@ -95,9 +83,6 @@ M.tabufline = {
       end,
       "goto prev buffer",
     },
-
-    -- pick buffers via numbers
-    ["<Bslash>"] = { "<cmd> TbufPick <CR>", "Pick buffer" },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -213,7 +198,7 @@ M.lspconfig = {
       "goto prev",
     },
 
-    ["d]"] = {
+    ["]d"] = {
       function()
         vim.diagnostic.goto_next()
       end,
@@ -229,7 +214,7 @@ M.lspconfig = {
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.formatting {}
+        vim.lsp.buf.format { async = true }
       end,
       "lsp formatting",
     },
@@ -280,7 +265,6 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
-    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
@@ -400,6 +384,70 @@ M.blankline = {
       end,
 
       "Jump to current_context",
+    },
+  },
+}
+
+M.gitsigns = {
+  plugin = true,
+
+  n = {
+    -- Navigation through hunks
+    ["]c"] = {
+      function()
+        if vim.wo.diff then
+          return "]c"
+        end
+        vim.schedule(function()
+          require("gitsigns").next_hunk()
+        end)
+        return "<Ignore>"
+      end,
+      "Jump to next hunk",
+      opts = { expr = true },
+    },
+
+    ["[c"] = {
+      function()
+        if vim.wo.diff then
+          return "[c"
+        end
+        vim.schedule(function()
+          require("gitsigns").prev_hunk()
+        end)
+        return "<Ignore>"
+      end,
+      "Jump to prev hunk",
+      opts = { expr = true },
+    },
+
+    -- Actions
+    ["<leader>rh"] = {
+      function()
+        require("gitsigns").reset_hunk()
+      end,
+      "Reset hunk",
+    },
+
+    ["<leader>ph"] = {
+      function()
+        require("gitsigns").preview_hunk()
+      end,
+      "Preview hunk",
+    },
+
+    ["<leader>gb"] = {
+      function()
+        package.loaded.gitsigns.blame_line()
+      end,
+      "Blame line",
+    },
+
+    ["<leader>td"] = {
+      function()
+        require("gitsigns").toggle_deleted()
+      end,
+      "Toggle deleted",
     },
   },
 }

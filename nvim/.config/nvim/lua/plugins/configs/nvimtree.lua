@@ -1,11 +1,3 @@
-local present, nvimtree = pcall(require, "nvim-tree")
-
-if not present then
-  return
-end
-
-require("base46").load_highlight "nvimtree"
-
 local options = {
   filters = {
     dotfiles = false,
@@ -13,19 +5,17 @@ local options = {
   },
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = { "alpha" },
   hijack_cursor = true,
   hijack_unnamed_buffer_when_opening = false,
-  update_cwd = true,
+  sync_root_with_cwd = true,
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_root = false,
   },
   view = {
-    adaptive_size = true,
+    adaptive_size = false,
     side = "left",
-    width = 25,
+    width = 30,
     hide_root_folder = true,
   },
   git = {
@@ -62,17 +52,17 @@ local options = {
         folder = {
           default = "",
           empty = "",
-          empty_open = "",
-          open = "",
+          empty_open = "",
+          open = "",
           symlink = "",
-          symlink_open = "",
+          symlink_open = "",
           arrow_open = "",
           arrow_closed = "",
         },
         git = {
           unstaged = "✗",
           staged = "✓",
-          unmerged = "",
+          unmerged = "",
           renamed = "➜",
           untracked = "★",
           deleted = "",
@@ -83,8 +73,6 @@ local options = {
   },
 }
 
--- check for any override
-options = require("core.utils").load_override(options, "kyazdani42/nvim-tree.lua")
 vim.g.nvimtree_side = options.view.side
 
-nvimtree.setup(options)
+return options
